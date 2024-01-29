@@ -35,6 +35,8 @@
       name="keywords"
       content="mascotas perro gato pez tortuga ave alimento"
     />
+    <script src="js/Carrito.js" defer></script>
+    <script src="js/index.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -81,7 +83,10 @@
               </li>
             </ul>
             <div id="carrito">
-              <a class="navbar-item" href="./pages/carrito.html">Carrito 🛒</a>
+              <a class="navbar-item" href="./pages/carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
             </div>
           </div>
         </div>
@@ -106,7 +111,7 @@
       <!------------- Circulos de Categorias de mascotas -------------------->
       <section class="category-circle-section">
         <div class="category-circle-container">
-          <a href="./pages/catalogo.html" title="Perros">
+          <a href="./pages/catalogo.html?category=perros" title="Perros">
             <img
               class="category-circle"
               src="./assets/images/perro.jpg"
@@ -115,7 +120,7 @@
           </a>
         </div>
         <div class="category-circle-container">
-          <a href="./pages/catalogo.html" title="Aves">
+          <a href="./pages/catalogo.html?category=aves" title="Aves">
             <img
               class="category-circle"
               src="./assets/images/ave.jpg"
@@ -124,7 +129,7 @@
           </a>
         </div>
         <div class="category-circle-container">
-          <a href="./pages/catalogo.html" title="Gatos">
+          <a href="./pages/catalogo.html?category=gatos" title="Gatos">
             <img
               class="category-circle"
               src="./assets/images/gato.jpg"
@@ -133,7 +138,7 @@
           </a>
         </div>
         <div class="category-circle-container">
-          <a href="./pages/catalogo.html" title="Reptiles">
+          <a href="./pages/catalogo.html?category=reptiles" title="Reptiles">
             <img
               class="category-circle"
               src="./assets/images/tortuga.jpg"
@@ -142,7 +147,7 @@
           </a>
         </div>
         <div class="category-circle-container">
-          <a href="./pages/catalogo.html" title="Peces">
+          <a href="./pages/catalogo.html?category=peces" title="Peces">
             <img
               class="category-circle"
               src="./assets/images/pez.jpg"
@@ -156,13 +161,13 @@
       <!----------------- Cards de Categorias especiales ------------------------>
       <section class="category-card-section">
         <div class="category-card-container">
-          <a href="./pages/catalogo.html">
+          <a href="./pages/catalogo.html?category=nutricion">
             <div class="category-card">
               <span class="category-card-text">Nutrición</span>
             </div>
           </a>
 
-          <a href="./pages/catalogo.html">
+          <a href="./pages/catalogo.html?category=promociones">
             <div class="category-card">
               <span class="category-card-text">Promociones</span>
             </div>
@@ -170,13 +175,13 @@
         </div>
 
         <div class="category-card-container">
-          <a href="./pages/catalogo.html">
+          <a href="./pages/catalogo.html?category=antiplagas">
             <div class="category-card">
               <span class="category-card-text">Antiplagas</span>
             </div>
           </a>
 
-          <a href="./pages/catalogo.html">
+          <a href="./pages/catalogo.html?category=juguetes">
             <div class="category-card">
               <span class="category-card-text">Juguetes</span>
             </div>

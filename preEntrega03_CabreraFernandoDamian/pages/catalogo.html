@@ -23,16 +23,28 @@
     />
     <link rel="stylesheet" href="../css/style.css" />
     <title>
-      Rocco Alimentos 🐕 | Contamos con un amplio catálogo de los más variados productos para tu mascota consultalo y no dudes en contactarnos para más información.
+      Rocco Alimentos 🐕 | Contamos con un amplio catálogo de los más variados
+      productos para tu mascota consultalo y no dudes en contactarnos para más
+      información.
     </title>
     <meta
       name="description"
       content="Contamos con un amplio catálogo de los más variados productos para tu mascota consultalo y no dudes en contactarnos para más información"
     />
     <meta
-    name="keywords"
-    content="alimento mascotas perro gato pez tortuga ave raza"
-  />
+      name="keywords"
+      content="alimento mascotas perro gato pez tortuga ave raza"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function swalSuccess() {
+        swal("Agregado al carrito!", "", "success");
+      }
+    </script>
+    <script src="../js/data.js" defer></script>
+    <script src="../js/Carrito.js" defer></script>
+    <script src="../js/catalogo.js" defer></script>
+  </head>
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg border-bottom border-body">
@@ -66,7 +78,7 @@
             <ul class="navbar-nav navbar-list">
               <li><a class="navbar-item" href="../index.html">Inicio</a></li>
               <li>
-                <a class="navbar-item" href="#">Catálogo</a>
+                <a class="navbar-item" href="catalogo.html">Catálogo</a>
               </li>
               <li>
                 <a class="navbar-item" href="./marcas.html">Marcas</a>
@@ -76,7 +88,10 @@
               </li>
             </ul>
             <div id="carrito">
-              <a class="navbar-item" href="./carrito.html">Carrito 🛒</a>
+              <a class="navbar-item" href="./carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
             </div>
           </div>
         </div>
@@ -87,86 +102,8 @@
         <h1 class="titulo-principal animate__animated animate__slideInDown">
           Catálogo
         </h1>
-        <div class="catalogo-container">
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
-          </div>
-          <div class="card-catalogo">
-            <img src="../assets/images/card.png" alt="producto de catálogo" />
-            <p>
-              Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-            </p>
-            <h2>$2.210</h2>
-            <div>
-              <a href="./carrito.html">Agregar al carrito</a>
-            </div>
+        <div id="catalogo-container" class="catalogo-container">
+          <!--Aca se renderizan dinamicamente los productos-->
           </div>
         </div>
       </section>

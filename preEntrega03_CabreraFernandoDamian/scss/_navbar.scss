@@ -48,8 +48,16 @@ div {
 
 #carrito {
   margin-left: 1rem;
-  width: 10rem;
+  width: 11rem;
   justify-self: end;
+  margin-top: -1.5rem;
+}
+#contadorCarrito {
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  width: 1.1rem;
+  margin-left: 7.5rem;
 }
 
 @media (max-width: 768px) {

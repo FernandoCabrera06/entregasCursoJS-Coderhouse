@@ -30,6 +30,15 @@
       name="description"
       content="Compra usando nuestro carrito con la mayor seguridad, se aceptan todo tipo de pagos"
     />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      function swalSuccess() {
+        swal("Agregado al carrito!", "", "success");
+      }
+    </script>
+    <script src="../js/data.js" defer></script>
+    <script src="../js/Carrito.js" defer></script>
+    <script src="../js/carrito-page.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -74,7 +83,10 @@
               </li>
             </ul>
             <div id="carrito">
-              <a class="navbar-item" href="#">Carrito 🛒</a>
+              <a class="navbar-item" href="./carrito.html"
+                ><span id="contadorCarrito" class="badge text-bg-danger"></span
+                >Carrito 🛒</a
+              >
             </div>
           </div>
         </div>
@@ -169,36 +181,7 @@
         <div class="productos-sugeridos">
           <h2>Productos que pueden interesarte</h2>
           <div class="card-sugeridos-carrito">
-            <div class="card-sugerida">
-              <img src="../assets/images/card.png" alt="producto de catálogo" />
-              <p>
-                Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-              </p>
-              <h2>$2.210</h2>
-              <div>
-                <a href="./carrito.html">Agregar al carrito</a>
-              </div>
-            </div>
-            <div class="card-sugerida">
-              <img src="../assets/images/card.png" alt="producto de catálogo" />
-              <p>
-                Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-              </p>
-              <h2>$2.210</h2>
-              <div>
-                <a href="./carrito.html">Agregar al carrito</a>
-              </div>
-            </div>
-            <div class="card-sugerida">
-              <img src="../assets/images/card.png" alt="producto de catálogo" />
-              <p>
-                Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6 kg
-              </p>
-              <h2>$2.210</h2>
-              <div>
-                <a href="./carrito.html">Agregar al carrito</a>
-              </div>
-            </div>
+            <!--Acá se renderizan los productos con la propiedad suggested= true (sugeridos)-->
           </div>
         </div>
       </section>
