@@ -1,21 +1,8 @@
 const listaProductosCatalogo = document.querySelector("#catalogo-container");
-const contadorCarrito = document.querySelector("#contadorCarrito");
-const carritoHTML = document.querySelector("#carrito");
-
-const listaCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-const carrito = new Carrito(listaCarrito);
-
+const catalogoVacio = document.querySelector("#catalogo-vacio");
 const params = new URLSearchParams(location.search);
 const brand = params.get("brand");
 const category = params.get("category");
-console.log("url parameters: " + brand + " " + category);
-
-if (carrito.getCount()) {
-  contadorCarrito.innerText = carrito.getCount();
-} else {
-  contadorCarrito.remove();
-  carritoHTML.style.marginTop = 0;
-}
 
 /* ------- recibe los datos y renderiza ------- */
 const renderListProducts = (list) => {
@@ -23,7 +10,7 @@ const renderListProducts = (list) => {
     listaProductosCatalogo.innerHTML = "";
     list.forEach((product) => {
       listaProductosCatalogo.innerHTML += `<div class="card-catalogo">
-            <img src="${product.img}" />
+            <img src="${product.img}" title="${product.brand}" />
             <p>
               ${product.description}
             </p>
@@ -40,7 +27,7 @@ const renderListProducts = (list) => {
       btn.addEventListener("click", agregarAlCarrito);
     });
   } else {
-    listaProductosCatalogo.innerHTML = `<h2>¡No se encontraron productos disponibles!</h2>`;
+    catalogoVacio.innerHTML = `<div class="sin-productos"><h2>¡😞No se encontraron productos disponibles!</h2></div>`;
   }
 };
 
@@ -49,8 +36,8 @@ const agregarAlCarrito = (e) => {
   const product = products.find((item) => item.id == id);
 
   carrito.agregarAlCarrito(product);
-  contadorCarrito.innerText = carrito.getCount();
-  carrito.getCount() == 1 && location.reload();
+  contadorCarrito.innerText = carrito.contarUnidades();
+  carrito.contarUnidades() == 1 && location.reload();
 };
 
 if (brand) {

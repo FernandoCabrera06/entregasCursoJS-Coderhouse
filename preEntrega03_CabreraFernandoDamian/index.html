@@ -35,8 +35,9 @@
       name="keywords"
       content="mascotas perro gato pez tortuga ave alimento"
     />
-    <script src="js/Carrito.js" defer></script>
-    <script src="js/index.js" defer></script>
+    <script src="js/models/Carrito.js" defer></script>
+    <script src="js/carrito-navbar.js" defer></script>
+    <script src="js/pages/index.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -110,83 +111,14 @@
 
       <!------------- Circulos de Categorias de mascotas -------------------->
       <section class="category-circle-section">
-        <div class="category-circle-container">
-          <a href="./pages/catalogo.html?category=perros" title="Perros">
-            <img
-              class="category-circle"
-              src="./assets/images/perro.jpg"
-              alt="Perro"
-            />
-          </a>
-        </div>
-        <div class="category-circle-container">
-          <a href="./pages/catalogo.html?category=aves" title="Aves">
-            <img
-              class="category-circle"
-              src="./assets/images/ave.jpg"
-              alt="Ave"
-            />
-          </a>
-        </div>
-        <div class="category-circle-container">
-          <a href="./pages/catalogo.html?category=gatos" title="Gatos">
-            <img
-              class="category-circle"
-              src="./assets/images/gato.jpg"
-              alt="Gato"
-            />
-          </a>
-        </div>
-        <div class="category-circle-container">
-          <a href="./pages/catalogo.html?category=reptiles" title="Reptiles">
-            <img
-              class="category-circle"
-              src="./assets/images/tortuga.jpg"
-              alt="Tortuga"
-            />
-          </a>
-        </div>
-        <div class="category-circle-container">
-          <a href="./pages/catalogo.html?category=peces" title="Peces">
-            <img
-              class="category-circle"
-              src="./assets/images/pez.jpg"
-              alt="Pez"
-            />
-          </a>
-        </div>
+        <!-- Acá renderizo desde JS los circulos de categorias-->
       </section>
       <!------------- FIN Circulos de Categorias de mascotas -------------------->
 
       <!----------------- Cards de Categorias especiales ------------------------>
       <section class="category-card-section">
-        <div class="category-card-container">
-          <a href="./pages/catalogo.html?category=nutricion">
-            <div class="category-card">
-              <span class="category-card-text">Nutrición</span>
-            </div>
-          </a>
-
-          <a href="./pages/catalogo.html?category=promociones">
-            <div class="category-card">
-              <span class="category-card-text">Promociones</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="category-card-container">
-          <a href="./pages/catalogo.html?category=antiplagas">
-            <div class="category-card">
-              <span class="category-card-text">Antiplagas</span>
-            </div>
-          </a>
-
-          <a href="./pages/catalogo.html?category=juguetes">
-            <div class="category-card">
-              <span class="category-card-text">Juguetes</span>
-            </div>
-          </a>
-        </div>
+        <div id="container-0" class="category-card-container"></div>
+        <div id="container-1" class="category-card-container"></div>
       </section>
       <!-----------------FIN Cards de Categorias especiales ------------------------>
     </main>

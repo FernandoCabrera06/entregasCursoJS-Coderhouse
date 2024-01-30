@@ -31,14 +31,11 @@
       content="Compra usando nuestro carrito con la mayor seguridad, se aceptan todo tipo de pagos"
     />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
-      function swalSuccess() {
-        swal("Agregado al carrito!", "", "success");
-      }
-    </script>
     <script src="../js/data.js" defer></script>
-    <script src="../js/Carrito.js" defer></script>
-    <script src="../js/carrito-page.js" defer></script>
+    <script src="../js/models/Carrito.js" defer></script>
+    <script src="../js/carrito-navbar.js" defer></script>
+    <script src="../js/pages/carrito.js" defer></script>
+    <script src="../js/libraries/sweet-alert.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -95,82 +92,25 @@
     <main>
       <!--------------------- Items de compra y Calculos --------------------------->
       <section>
-        <h1 class="titulo-principal animate__animated animate__slideInDown">
-          Carrito de compras
-        </h1>
+        <div class="container-encabezado">
+          <button id="btn-vaciar-carrito">Vaciar Carrito</button>
+          <h1 class="titulo-principal animate__animated animate__slideInDown">
+            Carrito de compras
+          </h1>
+        </div>
         <div class="card-compra-container">
-          <div class="card-compra a">
-            <div class="card-compra-info">
-              <div>
-                <img
-                  src="../assets/images/card.png"
-                  alt="producto de catálogo"
-                />
-              </div>
-              <div>
-                <p>
-                  Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6
-                  kg
-                </p>
-                <h2>$2.210</h2>
-              </div>
-            </div>
-            <div class="card-compra-contador">
-              <button>+</button><span>2</span><button>-</button>
+          <div class="d-flex">
+            <div class="overflow-auto" style="height: 400px">
+              <div
+                id="tabla-items-carrito"
+                class="card m-2"
+                style="max-width: 21540px"
+              ></div>
             </div>
           </div>
-
-          <div class="card-compra b">
-            <div class="card-compra-info">
-              <div>
-                <img
-                  src="../assets/images/card.png"
-                  alt="producto de catálogo"
-                />
-              </div>
-              <div>
-                <p>
-                  Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6
-                  kg
-                </p>
-                <h2>$2.210</h2>
-              </div>
-            </div>
-            <div class="card-compra-contador">
-              <button>+</button><span>2</span><button>-</button>
-            </div>
-          </div>
-
-          <div class="card-compra b">
-            <div class="card-compra-info">
-              <div>
-                <img
-                  src="../assets/images/card.png"
-                  alt="producto de catálogo"
-                />
-              </div>
-              <div>
-                <p>
-                  Royal Canin Alimento Seco para Perro Adulto Raza Grande, 13.6
-                  kg
-                </p>
-                <h2>$2.210</h2>
-              </div>
-            </div>
-            <div class="card-compra-contador">
-              <button>+</button><span>2</span><button>-</button>
-            </div>
-          </div>
+          <!-------Acá renderizo los items del carrito--------------->
           <div class="cuenta-total">
-            <h1>Resumen del pedido</h1>
-            <p>Subtotal:...................$2.998</p>
-            <p>Descuentos:.........................</p>
-            <p>Envío:..........................$200</p>
-            <hr />
-            <h2>Total: $3.198</h2>
-            <div class="botones-cuenta"></div>
-            <button>Comprar ahora</button>
-            <button>Continuar buscando</button>
+            <!-------Acá renderizo los calculos finales--------------->
           </div>
         </div>
       </section>

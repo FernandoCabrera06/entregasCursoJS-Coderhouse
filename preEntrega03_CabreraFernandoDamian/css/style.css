@@ -206,6 +206,17 @@ footer {
   display: grid;
   justify-items: center; }
 
+.sin-productos {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; }
+
+.sin-productos h2 {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.507); }
+
 .card-catalogo {
   border: solid 1px #000000;
   width: 13.2rem;
@@ -369,12 +380,19 @@ footer {
     width: 80vw;
     height: 40vh; } }
 
+.container-encabezado {
+  display: flex;
+  align-items: baseline;
+  margin-top: -8rem;
+  justify-content: center; }
+
 .titulo-principal {
-  margin-top: 12rem; }
+  margin-top: -5rem;
+  margin-right: 6.5rem; }
 
 .productos-sugeridos {
   text-align: center;
-  margin-top: 0.5rem; }
+  margin-top: 5rem; }
   .productos-sugeridos h2 {
     margin-bottom: 2rem; }
 
@@ -404,13 +422,13 @@ footer {
   display: grid;
   margin-top: 2rem;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   justify-items: center;
   grid-template-areas: "card-compra-a cuenta-total" "card-compra-b cuenta-total"; }
 
 .card-compra {
   border: solid 1px #000000;
-  width: 28rem;
+  width: 40rem;
   height: 9rem;
   margin: 0 2rem;
   padding: 1rem;
@@ -471,6 +489,15 @@ footer {
   .card-compra-contador span {
     padding: 2px 6px;
     font-size: 1.2rem; }
+
+#btn-vaciar-carrito {
+  margin: 0.5rem 6.5rem 0 2rem;
+  padding: 0.2rem;
+  background-color: #003fa1;
+  color: #ffffff;
+  font-size: 1rem; }
+  #btn-vaciar-carrito:hover {
+    background-color: #0557db; }
 
 .card-compra-info {
   display: flex; }

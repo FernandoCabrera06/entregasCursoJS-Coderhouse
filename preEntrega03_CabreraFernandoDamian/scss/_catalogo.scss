@@ -2,6 +2,17 @@
   display: grid;
   justify-items: center;
 }
+.sin-productos {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.sin-productos h2 {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: $alert-danger;
+}
 .card-catalogo {
   border: solid 1px $full_dark;
   width: 13.2rem;

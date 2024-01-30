@@ -74,7 +74,7 @@ const products = [
     price: 10690,
     suggested: false,
     brand: "vetnil",
-    category: "nutricion",
+    category: "nutrición",
   },
   {
     id: 9,
