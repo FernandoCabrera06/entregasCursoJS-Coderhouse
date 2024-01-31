@@ -13,7 +13,7 @@ function swalSuccess() {
   swal("Agregado al carrito!", "", "success");
 }
 
-/* ------- recibe los datos y renderiza ------- */
+/* ------- renderiza las card de productos sugeridos ------- */
 const renderListProducts = (list) => {
   if (list.length > 0) {
     listaProductosSugeridos.innerHTML = "";
@@ -23,9 +23,13 @@ const renderListProducts = (list) => {
             <p>
               ${product.description}
             </p>
-            <h2>$${product.price}</h2>
+            <h2>$${product.price} ${
+        product.discountRate > 0 ? " -" + product.discountRate + "%" : ""
+      }</h2>
             <div>
-              <a id="${product.id}" class="btn-agregar-al-carrito" onclick="swalSuccess()" type="button">Agregar al carrito</a>
+              <a id="${
+                product.id
+              }" class="btn-agregar-al-carrito" onclick="swalSuccess()" type="button">Agregar al carrito</a>
             </div>
           </div>`;
     });
@@ -70,8 +74,7 @@ renderListProducts(products.filter((item) => item.suggested));
 
 btnVaciarCarrito.addEventListener("click", carrito.vaciarCarrito);
 
-/*---Productos agregados al carrito---*/
-
+/* ------- renderiza los Productos agregados al carrito ------- */
 const renderizarItemsCarrito = () => {
   itemsCarrito.innerHTML = "";
   carrito.productosCarrito().forEach(
@@ -88,11 +91,15 @@ const renderizarItemsCarrito = () => {
       <p>
         ${item.description}
       </p>
-      <h2>$${item.price}</h2>
+      <h2>$${item.price} ${
+        item.discountRate > 0 ? " -" + item.discountRate + "%" : ""
+      }</h2>
     </div>
   </div>
   <div class="card-compra-contador">
-    <button id="${item.id}" class="btn-add">+</button><span>${item.units}</span><button id="${item.id}" class="btn-substract">-</button>
+    <button id="${item.id}" class="btn-add">+</button><span>${
+        item.units
+      }</span><button id="${item.id}" class="btn-substract">-</button>
   </div>
   </div>`)
   );

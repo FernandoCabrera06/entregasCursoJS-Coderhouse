@@ -14,9 +14,13 @@ const renderListProducts = (list) => {
             <p>
               ${product.description}
             </p>
-            <h2>$${product.price}</h2>
+            <h2>$${product.price} ${
+        product.discountRate > 0 ? " -" + product.discountRate + "%" : ""
+      }</h2>
             <div>
-              <a id="${product.id}" class="btn-agregar-al-carrito" onclick="swalCarrito()" type="button">Agregar al carrito</a>
+              <a id="${
+                product.id
+              }" class="btn-agregar-al-carrito" onclick="swalCarrito()" type="button">Agregar al carrito</a>
             </div>
           </div>`;
     });

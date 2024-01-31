@@ -8,6 +8,7 @@ const CATEGORY_CARDS = [
   ["Promociones", "Juguetes"],
 ];
 
+/* -------------- Renderiza los circulos de categorias  ------------- */
 CATEGORY_CIRCLES.forEach((categoryName) => {
   seccionCirculosCategorias.innerHTML += `<div class="category-circle-container">
     <a href="./pages/catalogo.html?category=${categoryName.toLocaleLowerCase()}" title="${categoryName}">
@@ -20,6 +21,7 @@ CATEGORY_CIRCLES.forEach((categoryName) => {
   </div>`;
 });
 
+/* -------------- Renderiza los rectangulos de categorias  ------------- */
 for (let i = 0; i < CATEGORY_CARDS.length; i++) {
   const containerCardCategorias = document.querySelector(`#container-${i}`);
 
