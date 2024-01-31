@@ -3,11 +3,18 @@ class Carrito {
     this.carrito = list;
   }
 
-  agregarAlCarrito({ id, img, description, price }) {
+  agregarAlCarrito({ id, img, description, price, discountRate }) {
     // Busco si existe el producto
     const index = this.carrito.findIndex((product) => product.id == id);
     if (index == -1) {
-      this.carrito.push({ id, img, description, price, units: 1 });
+      this.carrito.push({
+        id,
+        img,
+        description,
+        price,
+        discountRate,
+        units: 1,
+      });
     } else {
       // Ya esta en el carrito entonces incremento la cantidad'
       this.carrito[index].units += 1;
@@ -42,6 +49,25 @@ class Carrito {
   sumatoriaTotalCarrito() {
     return this.carrito.reduce((acum, product) => {
       return acum + product.units * product.price;
+    }, 0);
+  }
+
+  //------------- Constantes de impuestos y descuentos ---------------
+
+  calcularIVA(monto) {
+    const IVA = 21;
+    return (IVA / 100) * monto;
+  }
+
+  calcularDescuentos() {
+    return this.carrito.reduce((acum, product) => {
+      if (product.discountRate) {
+        return (
+          acum + (product.discountRate / 100) * product.units * product.price
+        );
+      } else {
+        return acum;
+      }
     }, 0);
   }
 

@@ -5,8 +5,8 @@ const itemsCarrito = document.querySelector("#tabla-items-carrito");
 const btnVaciarCarrito = document.querySelector("#btn-vaciar-carrito");
 
 let subtotal = 0;
-let descuentos = 0;
-let costoEnvio = 0;
+let totalDescuentos = 0;
+let totalImpuestos = 0;
 let total = 0;
 
 function swalSuccess() {
@@ -73,9 +73,10 @@ btnVaciarCarrito.addEventListener("click", carrito.vaciarCarrito);
 /*---Productos agregados al carrito---*/
 
 const renderizarItemsCarrito = () => {
+  itemsCarrito.innerHTML = "";
   carrito.productosCarrito().forEach(
     (item) =>
-      (itemsCarrito.innerHTML = `<div class="card-compra a">
+      (itemsCarrito.innerHTML += `<div class="card-compra a">
   <div class="card-compra-info">
     <div>
       <img
@@ -109,22 +110,29 @@ const renderizarItemsCarrito = () => {
 renderizarItemsCarrito();
 
 /* -------------- Sumatorias Carrito ------------- */
+
 const resumenCarrito = document.querySelector(".cuenta-total");
+
+const puedoComprar = () => {
+  total <= 0;
+};
+
 const calcularMontos = () => {
   subtotal = carrito.sumatoriaTotalCarrito();
-  descuentos = 0;
-  costoEnvio = 0;
-  total = subtotal + costoEnvio - descuentos;
+  totalImpuestos = carrito.calcularIVA(subtotal);
+  totalDescuentos = carrito.calcularDescuentos();
+  total = subtotal + totalImpuestos - totalDescuentos;
 
-  resumenCarrito.innerHTML = ` <h1>Resumen del pedido</h1>
-<p>Subtotal:...................$${subtotal}</p>
-<p>Descuentos:...................$${descuentos}</p>
-<p>Envío:..........................$${costoEnvio}</p>
+  resumenCarrito.innerHTML = `<h1>Resumen del pedido</h1>
+<p>Subtotal:...................$${subtotal.toFixed(2)}</p>
+<p>Descuentos:...................$${totalDescuentos.toFixed(2)}</p>
+<p>Impuestos:..........................$${totalImpuestos.toFixed(2)}</p>
 <hr />
-<h2>Total: $${total}</h2>
+<h2>Total: $${total.toFixed(2)}</h2>
 <div class="botones-cuenta">
-  <button>Comprar ahora</button>
-  <button>Continuar buscando</button>
+  <button id="btn-compra" onclick="swalCompra()">Comprar ahora</button>
+  <button onclick="location.href='./catalogo.html'">Continuar buscando</button>
+  
 </div>`;
 };
 calcularMontos();

@@ -7,6 +7,7 @@ const products = [
     price: 22100,
     suggested: true,
     brand: "Royal Canin",
+    discountRate: 15,
     category: "perros",
   },
   {
@@ -17,6 +18,7 @@ const products = [
     price: 17640,
     suggested: false,
     brand: "pro plan purina",
+    discountRate: 0,
     category: "perros",
   },
   {
@@ -27,6 +29,7 @@ const products = [
     price: 4550,
     suggested: false,
     brand: "NutriBird",
+    discountRate: 0,
     category: "aves",
   },
   {
@@ -37,6 +40,7 @@ const products = [
     price: 10462,
     suggested: true,
     brand: "hills",
+    discountRate: 15,
     category: "gatos",
   },
   {
@@ -47,6 +51,7 @@ const products = [
     price: 8620,
     suggested: false,
     brand: "purina",
+    discountRate: 0,
     category: "gatos",
   },
   {
@@ -56,6 +61,7 @@ const products = [
     price: 4750,
     suggested: false,
     brand: "azoo",
+    discountRate: 0,
     category: "reptiles",
   },
   {
@@ -65,6 +71,7 @@ const products = [
     price: 3780,
     suggested: false,
     brand: "imagitarium",
+    discountRate: 0,
     category: "peces",
   },
   {
@@ -74,6 +81,7 @@ const products = [
     price: 10690,
     suggested: false,
     brand: "vetnil",
+    discountRate: 0,
     category: "nutrición",
   },
   {
@@ -84,6 +92,7 @@ const products = [
     price: 15200,
     suggested: false,
     brand: "zoetis",
+    discountRate: 0,
     category: "antiplagas",
   },
   {
@@ -93,6 +102,7 @@ const products = [
     price: 12000,
     suggested: true,
     brand: "fulltrust",
+    discountRate: 25,
     category: "promociones",
   },
   {
@@ -102,6 +112,7 @@ const products = [
     price: 3510,
     suggested: false,
     brand: "playology",
+    discountRate: 0,
     category: "juguetes",
   },
 ];
