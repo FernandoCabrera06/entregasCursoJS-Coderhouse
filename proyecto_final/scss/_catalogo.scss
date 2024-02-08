@@ -1,0 +1,116 @@
+.catalogo-container {
+  display: grid;
+  justify-items: center;
+}
+
+.sin-productos {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.sin-productos h2 {
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: $alert-danger;
+}
+.card-catalogo {
+  border: solid 1px $full_dark;
+  width: 13.2rem;
+  height: 20rem;
+  text-align: center;
+  margin: 1rem;
+  padding: 0 1rem;
+  p {
+    font-size: 1rem;
+  }
+  h2 {
+    margin: 1px 0 4px;
+    font-size: 1.5rem;
+  }
+  a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    background-color: $background-color_1;
+    color: $full_light;
+    &:hover {
+      background-color: $background-color_2;
+    }
+  }
+  img {
+    width: 9rem;
+  }
+}
+
+/*spinner*/
+#spinner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#spinner {
+  width: 4rem;
+  display: flex;
+}
+.lds-facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #1111117a;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .catalogo-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .catalogo-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .catalogo-container {
+    grid-template-columns: 1fr;
+  }
+
+  /*spinner*/
+  #spinner-container {
+    margin-bottom: 4rem;
+  }
+}
